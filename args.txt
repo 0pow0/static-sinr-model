@@ -1,0 +1,7 @@
+--train_folder /home/rui/work/static-sinr-model/data/train/
+--val_folder /home/rui/work/static-sinr-model/data/val/
+--batch_size 16
+--lr 0.0001
+--lr_gamma 0.5
+--epochs 1000
+--checkpoint_dir /home/rui/work/static-sinr-model/check_points/
