@@ -76,17 +76,19 @@ lopt, lcov = curve_fit(line_func, ys.reshape(-1), yhats.reshape(-1))
 print(lopt)
 
 fig, ax = plt.subplots(facecolor=(1, 1, 1))
-ax.scatter(yhats, ys)
-ax.plot(ys, line_func(ys, *lopt), c='red', ls='dotted', label=r'yhat='+str(lopt[0])+'y+'+str(lopt[1]))
+ax.scatter(yhats, ys, c='#2b6a99', s=10, alpha=0.4)
+ax.plot(yhats, line_func(yhats, *lopt), c='#f16c23', ls='dotted', label=r'yhat='+str(lopt[0])+'y+'+str(lopt[1]))
 # ax.plot(y, y, c='gray', ls='dotted')#, label=r'\hat{y}='+str(lopt[0])+'y+'+str(lopt[1]))
 ax.set_xlabel(r'$\hat{y}$', fontsize=15)
 ax.set_ylabel(r'$y$', fontsize=15)
-ax.legend()
-fig.suptitle("Loss (MSE) = " + str(test_loss.item()) + " Corr = " + str(correlation))
+# ax.legend()
+fig.suptitle("Loss (MSE) = " + '{:.4f}'.format(test_loss.item()) + " Corr = " + '{:.4f}'.format(correlation))
 # fig.suptitle("Loss (MSE)" + test_loss+ "Corr = " + str(correlation))
 fig.tight_layout()
-fig.savefig('test.png', dpi=300)
+fig.savefig('test2.png', dpi=300)
 # plt.show()
+
+
 
 
 
