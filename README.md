@@ -8,6 +8,11 @@ Data: Included and located under data/folder. `.npy` data file could be generate
 
 Overwrite the `--train_folder` and `--val_folder` to the absolute path of data/train and data/test respectively; Overwrite the `--checkpoint_dir` to the absolute path of the folder to store model parameters.
 
+Install packages with:
+```python
+pip install -r requirements.txt
+```
+
 Start training with:
 
 ```python
