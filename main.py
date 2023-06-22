@@ -23,6 +23,7 @@ def set_parser():
     parser.add_argument("--checkpoint_dir", help="checkpoint dir", required=True, type=str)
     parser.add_argument("--eval_only", dest='eval_only', action='store_true')
     parser.add_argument("--lr_gamma", help='learning rate decay rate per step', required=True, type=float)
+    parser.add_argument("--cuda_device", help="cude device index", required=True, type=str)
     args, unknown = parser.parse_known_args()
     return args
 
@@ -86,7 +87,7 @@ def main():
 
     torch.manual_seed(0)
 
-    device = torch.device('cuda:1')
+    device = torch.device('cuda:' + args.cuda_device)
 
     print('=' * 50 + "loading data and instantiating data loader" + '=' * 50)
     train_dataloader, val_dataloader, train_dataset, val_dataset = split_data(args.train_folder, args.val_folder)
