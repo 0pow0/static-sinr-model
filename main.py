@@ -54,7 +54,6 @@ def train(model, train_loader, device, optimizer, criterion, epoch):
     model.train()
 
     for batch_idx, data in enumerate((train_loader)):
-        # 初始化梯度为0
         optimizer.zero_grad()
         xs = data['x'].to(device).float()
         ys = data['y'].to(device).float()
